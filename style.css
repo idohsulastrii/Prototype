@@ -622,12 +622,69 @@ footer {
 }
 
 /* --- RESPONSIVE ADJUSTMENTS --- */
+/* --- RESPONSIVE ADJUSTMENTS --- */
 @media (max-width: 768px) {
-    .main-title { font-size: 2.6rem; }
-    .section-title { font-size: 2rem; }
-    .mempelai-flex { gap: 20px; }
-    .gallery-large { height: 250px; }
-    .gallery-thumbs { grid-template-columns: repeat(2, 1fr); }
-    .thumb-img { height: 90px; }
-    .rsvp-grid { gap: 20px; }
+    .main-title { 
+        font-size: 2.6rem; 
+    }
+    .section-title { 
+        font-size: 2rem; 
+    }
+    
+    /* Paksa berjejer ke samping di HP */
+    .mempelai-flex { 
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+    }
+    
+    .mempelai-card {
+        flex: 1 !important;
+        min-width: 130px !important;
+        max-width: 47% !important;
+    }
+
+    /* Ukuran bingkai foto dikecilkan agar muat berdampingan */
+    .img-frame {
+        width: 100px !important;  
+        height: 100px !important;
+        border-width: 2px !important;
+        padding: 4px !important;
+        margin: 0 auto 10px !important;
+    }
+
+    /* Ukuran teks nama pengantin */
+    .mempelai-card h3 {
+        font-size: 1.1rem !important;
+        margin-bottom: 4px !important;
+    }
+
+    /* Ukuran teks orang tua */
+    .ortu {
+        font-size: 0.75rem !important;
+        line-height: 1.3 !important;
+    }
+
+    /* Mengatur tanda ampersand (&) di tengah */
+    .ampersand {
+        font-size: 1.5rem !important;
+        align-self: center !important;
+        margin-top: -50px !important;
+    }
+    
+    /* Elemen lain di layar HP */
+    .gallery-large { 
+        height: 250px; 
+    }
+    .gallery-thumbs { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .thumb-img { 
+        height: 90px; 
+    }
+    .rsvp-grid { 
+        gap: 20px; 
+    }
 }
