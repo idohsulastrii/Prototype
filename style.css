@@ -234,7 +234,8 @@ body {
     align-items: center;
     gap: 40px;
     margin-top: 50px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Ini yang akan memaksa elemen turun ke bawah jika layar sempit */
+    flex-direction: row; /* Default di laptop tetap ke samping */
 }
 
 .mempelai-card {
@@ -623,30 +624,22 @@ footer {
 
 /* --- RESPONSIVE ADJUSTMENTS --- */
 @media (max-width: 768px) {
-    .main-title { 
-        font-size: 2.6rem; 
-    }
-    .section-title { 
-        font-size: 2rem; 
-    }
+    .main-title { font-size: 2.6rem; }
+    .section-title { font-size: 2rem; }
     
-    /* Kembalikan ke susunan ke bawah (vertikal) */
     .mempelai-flex { 
         display: flex !important;
-        flex-direction: column !important; /* Susun vertikal ke bawah */
-        justify-content: center !important;
-        align-items: center !important;
+        flex-direction: column !important; /* Deteksi HP: langsung paksa susun ke bawah */
         gap: 20px !important;
     }
     
     .mempelai-card {
         flex: 1 !important;
         width: 100% !important;
-        max-width: 300px !important; /* Batasi lebar kartu di HP agar proporsional */
+        max-width: 300px !important;
         margin: 0 auto !important;
     }
 
-    /* Ukuran bingkai foto di HP (pas, tidak kekecilan/kegedean) */
     .img-frame {
         width: 160px !important;  
         height: 160px !important;
@@ -655,39 +648,26 @@ footer {
         margin: 0 auto 15px !important;
     }
 
-    /* Ukuran teks nama pengantin saat di HP */
     .mempelai-card h3 {
         font-size: 1.5rem !important;
         margin-bottom: 6px !important;
     }
 
-    /* Ukuran teks nama orang tua */
     .ortu {
         font-size: 0.9rem !important;
         line-height: 1.4 !important;
     }
 
-    /* --- MEMAKSA TANDA & BERADA DI TENGAH-TENGAH --- */
     .ampersand {
         font-size: 2.2rem !important;
         display: block !important;
         text-align: center !important;
-        margin: 15px 0 !important; /* Memberi jarak atas-bawah yang seimbang */
+        margin: 15px 0 !important;
         width: 100% !important;
-        align-self: center !important;
     }
     
-    /* Elemen lain di layar HP */
-    .gallery-large { 
-        height: 250px; 
-    }
-    .gallery-thumbs { 
-        grid-template-columns: repeat(2, 1fr); 
-    }
-    .thumb-img { 
-        height: 90px; 
-    }
-    .rsvp-grid { 
-        gap: 20px; 
-    }
+    .gallery-large { height: 250px; }
+    .gallery-thumbs { grid-template-columns: repeat(2, 1fr); }
+    .thumb-img { height: 90px; }
+    .rsvp-grid { gap: 20px; }
 }
